@@ -1,0 +1,67 @@
+<nav class="col-md-2 d-none d-md-block sidebar">
+    <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+            <li class="nav-item">
+               
+            </li>
+            
+            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                <span>Manage</span>
+            </h6>
+            {{#ifCond session.isAdmin '===' true}}
+            <li class="nav-item sidebar-addon">
+                <a class="nav-link sidebar-link" href="/admin/products">
+                    {{{feather 'tag'}}} &nbsp;
+                    Products
+                </a>
+                <a class="sidebar-link-addon text-muted" href="/admin/product/new">
+                    {{{feather 'plus'}}}
+                </a>
+            </li>
+            {{else}}
+            <li class="nav-item">
+                <a class="nav-link" href="/admin/products">
+                    {{{feather 'tag'}}} &nbsp;
+                    Products
+                </a>
+            </li>
+            {{/ifCond}}
+            <li class="nav-item sidebar-addon">
+                <a class="nav-link sidebar-link" href="/admin/orders">
+                    {{{feather 'package'}}} &nbsp;
+                    Orders
+                </a>
+                <a class="sidebar-link-addon text-muted" href="/admin/order/create">
+                    {{{feather 'plus'}}}
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/admin/customers">
+                    {{{feather 'users'}}} &nbsp;
+                    Customers
+                </a>
+            </li>
+            <li class="nav-item sidebar-addon">
+                <a class="nav-link sidebar-link" href="/admin/users">
+                    {{{feather 'user'}}} &nbsp;
+                    Users
+                </a>
+                <a class="sidebar-link-addon text-muted" href="/admin/user/new">
+                    {{{feather 'plus'}}}
+                </a>
+            </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link" href="/admin/logout">
+                    {{{feather 'log-out'}}} &nbsp;
+                    {{ @root.__ "Logout" }}
+                </a>
+            </li>
+           
+        </ul>
+
+      
+       
+    </div>
+</nav>
